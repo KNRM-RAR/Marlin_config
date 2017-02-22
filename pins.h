@@ -655,8 +655,10 @@
     #define LED_PIN            13
   #endif
 
-  #if MB(RAMPS_13_EFB) || MB(RAMPS_13_EFF) || MB(AZTEEG_X3) || MB(AZTEEG_X3_PRO)
+  #if MB(RAMPS_13_EFB) || MB(RAMPS_13_EFF) || MB(AZTEEG_X3)
     #define FAN_PIN            9 // (Sprinter config)
+  #elif MB(AZTEEG_X3_PRO)
+    #define FAN_PIN            11 // Last Heater Pin on board
   #else
     #define FAN_PIN            4 // IO pin. Buffer needed
   #endif
@@ -1652,7 +1654,7 @@
  #define TEMP_0_PIN         -1
  #define HEATER_0_PIN       -1
 #else
- #define HEATER_0_PIN        3    // EXTRUDER 1
+ #define HEATER_0_PIN        2    // EXTRUDER 1
  #if (TEMP_SENSOR_0==-1)
   #define TEMP_0_PIN         6    // ANALOG NUMBERING - connector *K1* on RUMBA thermocouple ADD ON is used
  #else
@@ -1664,7 +1666,7 @@
  #define TEMP_1_PIN         -1
  #define HEATER_1_PIN       -1
 #else
- #define HEATER_1_PIN        2    // EXTRUDER 2
+ #define HEATER_1_PIN        3    // EXTRUDER 2
  #if (TEMP_SENSOR_1==-1)
   #define TEMP_1_PIN         5    // ANALOG NUMBERING - connector *K2* on RUMBA thermocouple ADD ON is used
  #else
